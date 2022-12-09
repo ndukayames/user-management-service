@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  devtools:
+    livereload:
+      enabled: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/user-management
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  main:
+    allow-circular-references: true
+logging:
+  level:
+    org:
+      springframework:
+        security: info
+tca:
+  app:
+    jwtSecret: the-clout-app
+    jwtExpirationMs: 144000
