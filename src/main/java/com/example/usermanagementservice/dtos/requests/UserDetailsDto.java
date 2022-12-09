@@ -1,18 +1,16 @@
-package com.example.usermanagementservice.dtos;
+package com.example.usermanagementservice.dtos.requests;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class UserProfileUpdateDto {
-
+@NoArgsConstructor
+public class UserDetailsDto {
   private String email;
   private String phoneNumber;
   private String firstName;
   private String lastName;
-  private String password1;
-  private String password2;
+  private Long id;
 }

@@ -1,5 +1,6 @@
 package com.example.usermanagementservice.entities;
 
+import com.example.usermanagementservice.dtos.requests.UserDetailsDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,6 +10,38 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+
+@NamedNativeQueries({
+  @NamedNativeQuery(
+    name = "getUserDetailsProc",
+    query = "call getUserDetailsProc(:userEmail)",
+    resultSetMapping = "UserDetailsDto"
+  ),
+    @NamedNativeQuery(
+        name = "getAllUsersProc",
+        query = "call getAllUsersProc(:toSkip, :pageCount)",
+        resultSetMapping = "UserDetailsDto"
+    ),
+    @NamedNativeQuery(
+        name = "deleteMyAccountProc",
+        query = "call deleteMyAccountProc(:userEmail)"
+    )
+})
+@SqlResultSetMappings({
+  @SqlResultSetMapping(
+    name = "UserDetailsDto",
+    classes = @ConstructorResult(
+      targetClass = UserDetailsDto.class,
+      columns = {
+          @ColumnResult(name="email", type = String.class),
+          @ColumnResult(name="phone_number", type = String.class),
+          @ColumnResult(name="first_name", type = String.class),
+          @ColumnResult(name="last_name", type = String.class),
+          @ColumnResult(name="id", type = Long.class)
+      }
+    )
+  )
+})
 public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

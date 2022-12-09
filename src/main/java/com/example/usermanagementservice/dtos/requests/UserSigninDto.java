@@ -1,4 +1,4 @@
-package com.example.usermanagementservice.dtos;
+package com.example.usermanagementservice.dtos.requests;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
