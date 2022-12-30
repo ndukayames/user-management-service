@@ -1,0 +1,35 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1/
+spring:
+  devtools:
+    livereload:
+      enabled: false
+  datasource:
+    url: jdbc:mysql://mysqldb/user-management-proddb
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  main:
+    allow-circular-references: true
+#  flyway:
+#    baseline-on-migrate: true
+#    url: jdbc:mysql://localhost:3306/user-management
+#    user: root
+#    password: password
+#    create-schemas: true
+#    schemas: user-management
+logging:
+  level:
+    org:
+      springframework:
+        security: info
+tca:
+  app:
+    jwtSecret: the-clout-app
+    jwtExpirationMs: 144000
