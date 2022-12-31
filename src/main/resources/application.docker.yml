@@ -7,9 +7,9 @@ spring:
     livereload:
       enabled: false
   datasource:
-    url: jdbc:mysql://mysqldb/user-management-proddb
-    username: root
-    password: root
+    url: jdbc:mysql://162.0.233.61:3306/orgsoftprism_ums
+    username: orgsoftprism_ums
+    password: x4X67Rw7F8vAE2Cmvz
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
