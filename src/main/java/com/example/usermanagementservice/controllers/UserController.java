@@ -79,7 +79,7 @@ public ResponseEntity<BaseResponse> findAllUsers(@RequestParam Map<String,String
     
     List<UserDetailsDto> findUsersAction = userService.findAllUsers(pageData);
     BaseResponse baseResponse = new ResponseWithData<List<UserDetailsDto>>(findUsersAction);
-    baseResponse.setSuccess(true);
+    baseResponse.setSuccess(false);
     return new ResponseEntity<>(baseResponse, HttpStatus.OK);
   }
 
